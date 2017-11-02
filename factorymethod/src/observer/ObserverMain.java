@@ -14,16 +14,16 @@ public class ObserverMain {
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String[] args) {
         // TODO code application logic here
-        ClockSubject gello = new ClockSubject();
-        DigitalClock dg = new DigitalClock();
+        ClockObservable clock = new ClockObservable();
+        DigitalClock dc = new DigitalClock();
+
+        clock.addObserver(dc);
         
-        gello.addObserver(dg);
-        
-        gello.tick();
-        gello.tick();
-        gello.tick();
+        clock.run();
+
     }
-    
+
 }

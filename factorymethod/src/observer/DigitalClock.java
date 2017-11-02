@@ -14,18 +14,14 @@ import java.util.Observer;
  */
 public class DigitalClock implements Observer{
     
-    private ClockSubject clock;
-    
-    private int minute;
-    private int hour;
+    private ClockObservable clock;
     
     public DigitalClock() {
-        minute = 1;
-        hour = 1;
+        
     }
 
     public void update(Observable o, Object arg) {
-        clock = (ClockSubject) o;
+        clock = (ClockObservable) o;
         clock.getTime();
     }
 
